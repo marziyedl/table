@@ -11,7 +11,11 @@ import { FormsModule } from '@angular/forms';
     TablePaginationComponent,
     PageSizeDropDownComponent,
   ],
-  exports: [TablePaginationComponent, PageSizeDropDownComponent],
+  exports: [
+    TableComponent,
+    TablePaginationComponent,
+    PageSizeDropDownComponent,
+  ],
   imports: [CommonModule, FormsModule],
 })
 export class TableModule {}
