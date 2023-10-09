@@ -1,0 +1,41 @@
+$select-background: #5c6664;
+$select-hover-color: #23b499;
+
+select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  background: $select-background;
+  background-image: none;
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.select-wrapper {
+  width: 10rem;
+  height: 2rem;
+  line-height: 3;
+  background: $select-background;
+  overflow: hidden;
+
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: -50%;
+    right: 0;
+    padding: .5rem;
+    background: #2b2e2e;
+    cursor: pointer;
+  }
+
+  &:hover::after {
+    color: $select-hover-color;
+  }
+}

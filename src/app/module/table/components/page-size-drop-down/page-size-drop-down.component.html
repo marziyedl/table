@@ -1,0 +1,11 @@
+<div class="d-flex pos-relative select-wrapper">
+  <select
+    class="size-page"
+    [(ngModel)]="size"
+    (ngModelChange)="onChangePageNumber()"
+  >
+    <option selected value="{{ size }}">page size {{ size }}</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+  </select>
+</div>
