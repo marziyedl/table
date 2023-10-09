@@ -1,0 +1,5 @@
+<div class="d-flex flex-justify-center flex-items-center mt-1">
+  <button class="btn" (click)="goOnPrevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>{{ currentPage }} / {{ totalPages }}</span>
+  <button class="btn" (click)="goOnNextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
