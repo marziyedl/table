@@ -1,0 +1,59 @@
+<div style="overflow-x: auto">
+  <table class="table">
+    <caption #ref>
+      <ng-content></ng-content>
+    </caption>
+
+    <thead *ngIf="!ref.children.length">
+      <tr>
+        <th class="th text-left">
+          <input
+            type="checkbox"
+            [(ngModel)]="selectedAll"
+            (ngModelChange)="selectAllRows($event)"
+          />
+        </th>
+        <th class="th text-left" *ngFor="let column of columns; let i = index">
+          {{ displayNames[i] }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let item of currentPageData; let i = index"
+        [ngClass]="isSelectedRow(i) ? 'selected' : ''"
+      >
+        <td class="td text-left">
+          <input
+            type="checkbox"
+            [checked]="isSelectedRow(i)"
+            (change)="toggleSelection(i)"
+          />
+        </td>
+
+        <td
+          *ngFor="let column of columns; let i = index"
+          class="td text-left"
+          [attr.data-label]="displayNames[i]"
+        >
+          {{ item[column] || '---' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-table-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (prev)="prevPage()"
+    (next)="nextPage()"
+  />
+  <app-page-size-drop-down [(size)]="pageSize"></app-page-size-drop-down>
+
+  <section>
+    <p>Total Rows: {{ totalRows }}</p>
+
+    <p>Selected Rows: {{ selectedRows.length }}</p>
+  </section>
+</div>
