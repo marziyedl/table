@@ -24,4 +24,42 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Introduction
+
+This Angular assignment project contains code for a web application built using Angular. The project includes components for a "table" module and is tested using Cypress for end-to-end testing.
+
+## Project Structure
+
+The project structure is organized as follows:
+project-root/
+├── src/
+│ ├── app/
+│ │ ├── components/
+│ │ │ ├── table/
+│ │ │ │ ├── table.component.html
+│ │ │ │ ├── table.component.ts
+│ │ │ │ └── ...
+│ │ ├── services/
+│ │ │ ├── table-data.service.ts
+│ │ │ └── ...
+├── cypress/
+│ ├── 
+│ │ ├── spec.cy.ts
+│ │ └── ...
+└── ...
+
+
+- The `src` directory contains the Angular application code.
+- Inside `app`, you will find a `components` directory for the "table" module's components and a `services` directory for the data service.
+- The `cypress` directory holds your end-to-end test code.
+
+Table Module
+The "table" module consists of components and a service for handling data.
+
+Components
+table.component.html: The HTML template for the table component.
+table.component.ts: The TypeScript code for the table component.
+...
+Services
+table-data.service.ts: The data service responsible for handling data related to the table.
+...
